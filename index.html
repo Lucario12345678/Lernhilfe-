@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LernStart – Deine kostenlose Lernplattform</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="#start" aria-label="LernStart Startseite"><span>✦</span> LernStart</a>
+    <nav>
+      <a href="#faecher">Fächer</a>
+      <a href="#quiz">Quiz</a>
+      <a href="#fortschritt">Fortschritt</a>
+    </nav>
+    <button class="mobile-menu" id="menuBtn" aria-label="Menü öffnen">☰</button>
+  </header>
+
+  <main>
+    <section class="hero" id="start">
+      <div class="hero-copy">
+        <div class="pill">100 % kostenlos · ohne Abo</div>
+        <h1>Lernen, das<br><span>einfach Spaß macht.</span></h1>
+        <p>Entdecke Fächer, übe mit interaktiven Aufgaben und sieh direkt, was du schon kannst.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#faecher">Jetzt lernen</a>
+          <a class="btn secondary" href="#quiz">Quiz starten</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="mini-top"><span>Dein Lernfortschritt</span><strong>Diese Woche</strong></div>
+        <div class="progress-ring"><div><b>72%</b><small>Fortschritt</small></div></div>
+        <div class="stats">
+          <div><b>24</b><span>Aufgaben</span></div>
+          <div><b>8</b><span>Tage aktiv</span></div>
+          <div><b>4</b><span>Fächer</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faecher">
+      <div class="section-head">
+        <div><span class="eyebrow">ENTDECKEN</span><h2>Wähle dein Fach</h2></div>
+        <div class="search-wrap"><input id="search" type="search" placeholder="Fach suchen …"></div>
+      </div>
+      <div class="subjects" id="subjects">
+        <button class="subject" data-name="Mathematik" data-subject="Mathematik"><span class="icon">∑</span><b>Mathematik</b><small>Rechnen · Algebra · Geometrie</small></button>
+        <button class="subject" data-name="Deutsch" data-subject="Deutsch"><span class="icon">Aa</span><b>Deutsch</b><small>Grammatik · Gedichte · Texte</small></button>
+        <button class="subject" data-name="Englisch" data-subject="Englisch"><span class="icon">EN</span><b>Englisch</b><small>Vocabulary · Grammar · Reading</small></button>
+        <button class="subject" data-name="Biologie" data-subject="Biologie"><span class="icon">♧</span><b>Biologie</b><small>Zellen · Körper · Ökologie</small></button>
+        <button class="subject" data-name="Physik" data-subject="Physik"><span class="icon">⚡</span><b>Physik</b><small>Kräfte · Strom · Energie</small></button>
+        <button class="subject" data-name="Geschichte" data-subject="Geschichte"><span class="icon">⌛</span><b>Geschichte</b><small>Epochen · Ereignisse · Personen</small></button>
+      </div>
+      <p class="empty" id="empty">Kein Fach gefunden.</p>
+    </section>
+
+    <section class="section quiz-section" id="quiz">
+      <div class="quiz-intro">
+        <span class="eyebrow">INTERAKTIV</span>
+        <h2>Teste dein Wissen</h2>
+        <p>Kurze Fragen, sofortiges Feedback. Wähle ein Fach und starte ein Mini-Quiz.</p>
+        <div class="quiz-subjects">
+          <button class="filter active" data-filter="Mathematik">Mathe</button>
+          <button class="filter" data-filter="Biologie">Bio</button>
+          <button class="filter" data-filter="Deutsch">Deutsch</button>
+          <button class="filter" data-filter="Englisch">Englisch</button>
+        </div>
+      </div>
+      <div class="quiz-card">
+        <div class="quiz-meta"><span id="quizSubject">Mathematik</span><span id="quizCount">Frage 1 / 3</span></div>
+        <h3 id="question">Was ist 7 × 8?</h3>
+        <div class="answers" id="answers"></div>
+        <div class="quiz-bottom">
+          <span id="feedback">Wähle eine Antwort.</span>
+          <button class="btn primary small" id="nextBtn" disabled>Weiter</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section progress-section" id="fortschritt">
+      <div class="section-head">
+        <div><span class="eyebrow">DEIN STATUS</span><h2>Fortschritt</h2></div>
+      </div>
+      <div class="progress-grid">
+        <div class="progress-card">
+          <div class="progress-number" id="score">0</div>
+          <span>richtig beantwortete Fragen</span>
+        </div>
+        <div class="progress-card wide">
+          <div class="bar-label"><span>Quiz-Fortschritt</span><b id="barText">0%</b></div>
+          <div class="bar"><i id="bar"></i></div>
+          <p>Dein Fortschritt wird nur in deinem Browser gespeichert.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>✦ LernStart</strong>
+    <span>Eine einfache, kostenlose Lernplattform.</span>
+    <span>© <span id="year"></span> LernStart</span>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
